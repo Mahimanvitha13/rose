@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediCare - Healthcare Appointment</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🏥 MediCare
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#appointments">Appointments</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <button class="login-btn" onclick="openLogin()">
+                Login
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- HOME -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Your Health,<br>
+                Our <span>Priority</span>
+            </h1>
+
+            <p>
+                Find the best doctors and book your appointment
+                easily from anywhere.
+            </p>
+
+            <button onclick="scrollToDoctors()" class="primary-btn">
+                Find a Doctor
+            </button>
+
+        </div>
+
+        <div class="hero-image">
+            👨‍⚕️
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="services">
+
+        <h2>Our Services</h2>
+
+        <div class="service-container">
+
+            <div class="service-card">
+                <div>👨‍⚕️</div>
+                <h3>Expert Doctors</h3>
+                <p>Consult experienced doctors.</p>
+            </div>
+
+            <div class="service-card">
+                <div>📅</div>
+                <h3>Easy Booking</h3>
+                <p>Book appointments easily.</p>
+            </div>
+
+            <div class="service-card">
+                <div>💻</div>
+                <h3>Online Consultation</h3>
+                <p>Consult doctors online.</p>
+            </div>
+
+            <div class="service-card">
+                <div>🔔</div>
+                <h3>Reminders</h3>
+                <p>Never miss your appointment.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DOCTORS -->
+    <section id="doctors" class="doctors-section">
+
+        <h2>Find Your Doctor</h2>
+
+        <div class="search-area">
+
+            <input
+                type="text"
+                id="searchDoctor"
+                placeholder="Search doctor..."
+                onkeyup="searchDoctors()"
+            >
+
+            <select id="specialization" onchange="filterDoctors()">
+
+                <option value="all">
+                    All Specializations
+                </option>
+
+                <option value="Cardiologist">
+                    Cardiologist
+                </option>
+
+                <option value="Dermatologist">
+                    Dermatologist
+                </option>
+
+                <option value="Dentist">
+                    Dentist
+                </option>
+
+                <option value="Neurologist">
+                    Neurologist
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div id="doctorContainer" class="doctor-container">
+
+            <!-- DOCTORS WILL COME HERE -->
+
+        </div>
+
+    </section>
+
+
+    <!-- APPOINTMENTS -->
+    <section id="appointments" class="appointments-section">
+
+        <h2>My Appointments</h2>
+
+        <div id="appointmentContainer">
+
+            <p class="no-appointments">
+                No appointments booked yet.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+
+        <h2>About MediCare</h2>
+
+        <p>
+            MediCare is a healthcare appointment platform that
+            helps patients find doctors and book appointments
+            quickly and conveniently.
+        </p>
+
+    </section>
+
+
+    <!-- LOGIN MODAL -->
+    <div id="loginModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeLogin()">
+                &times;
+            </span>
+
+            <h2>Patient Login</h2>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email"
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+            >
+
+            <button onclick="login()" class="primary-btn">
+                Login
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- APPOINTMENT MODAL -->
+    <div id="appointmentModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeAppointment()">
+                &times;
+            </span>
+
+            <h2>Book Appointment</h2>
+
+            <h3 id="selectedDoctor"></h3>
+
+            <input
+                type="text"
+                id="patientName"
+                placeholder="Patient Name"
+            >
+
+            <input
+                type="tel"
+                id="patientPhone"
+                placeholder="Phone Number"
+            >
+
+            <input
+                type="date"
+                id="appointmentDate"
+            >
+
+            <select id="appointmentTime">
+
+                <option value="">
+                    Select Time
+                </option>
+
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>12:00 PM</option>
+                <option>02:00 PM</option>
+                <option>03:00 PM</option>
+                <option>04:00 PM</option>
+
+            </select>
+
+            <button
+                onclick="bookAppointment()"
+                class="primary-btn"
+            >
+                Confirm Appointment
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>🏥 MediCare</h3>
+
+        <p>
+            Your health is our priority.
+        </p>
+
+        <p>
+            © 2026 MediCare
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
